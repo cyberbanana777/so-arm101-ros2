@@ -1,0 +1,1 @@
+Thanks (Neoxra for fast base solution)[https://github.com/Neoxra/lerobot-ros-moveit.git]
