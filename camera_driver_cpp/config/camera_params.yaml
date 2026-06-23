@@ -1,0 +1,41 @@
+jpeg_publisher:
+  ros__parameters:
+    # Основные параметры
+    fps: 30.0
+    enable_logging: true
+    camera_image_topic: "camera/image/compressed"
+    camera_info_topic: "camera/camera_info"
+    
+    # Параметры режима работы камеры
+    device_id: 0          # ID устройства (0 = /dev/video0, 1 = /dev/video1)
+    width: 1280           # Ширина изображения
+    height: 720           # Высота изображения
+    jpeg_quality: 90      # Качество JPEG (1-100)
+    
+    # Параметры калибровки
+    frame_id: "camera_frame"
+    distortion_model: "plumb_bob"
+    
+    # Коэффициенты искажений [k1, k2, p1, p2, k3]
+    distortion_coefficients: [-0.1, 0.05, 0.0, 0.0, 0.0]
+    
+    # Матрица камеры K (3x3, построчно)
+    camera_matrix: [
+      615.0, 0.0, 320.5,
+      0.0, 615.0, 240.5,
+      0.0, 0.0, 1.0
+    ]
+    
+    # Матрица исправления R (3x3, построчно)
+    rectification_matrix: [
+      1.0, 0.0, 0.0,
+      0.0, 1.0, 0.0,
+      0.0, 0.0, 1.0
+    ]
+    
+    # Матрица проекции P (3x4, построчно)
+    projection_matrix: [
+      615.0, 0.0, 320.5, 0.0,
+      0.0, 615.0, 240.5, 0.0,
+      0.0, 0.0, 1.0, 0.0
+    ]
