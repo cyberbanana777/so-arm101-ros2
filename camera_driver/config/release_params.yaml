@@ -1,0 +1,6 @@
+/camera_driver:
+  ros__parameters:
+    camera_image_topic: /camera/image/compressed
+    camera_info_topic: /camera/camera_info
+    enable_logging: false
+    fps: 30.0
